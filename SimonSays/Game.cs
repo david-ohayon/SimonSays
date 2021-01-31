@@ -148,13 +148,8 @@ namespace SimonSays
                         livesIcon.IconChar = IconChar.Heartbeat;
                         return;
                     }
-                    if (lives == 1)
-                    {
-                        livesIcon.IconChar = IconChar.HeartBroken;
-                        return;
-                    }
                 }
-                if (twoLives)
+                if (twoLives || threeLives)
                 {
                     if (lives == 1)
                     {
@@ -182,6 +177,8 @@ namespace SimonSays
 
             scoreNum.Text = (colorList.Count - 1).ToString();
             GameOver.Score = (colorList.Count - 1).ToString();
+
+            livesNum.Text = lives.ToString();
         }
 
         /// Listeners
@@ -234,6 +231,8 @@ namespace SimonSays
                 soundMenuItm.Text = "Sound On";
         }
 
+        /// the font sometimes dissapears on hover on the menu strips
+        /// so those functions prevent it from happening
         private void soundMenuItm_MouseEnter(object sender, EventArgs e)
         {
             Program.AddFontFile("scramble-font", menuStrip);

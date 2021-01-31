@@ -44,6 +44,8 @@
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.soundMenuItm = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutMenuItm = new System.Windows.Forms.ToolStripMenuItem();
+            this.livesNum = new System.Windows.Forms.Label();
+            this.livesLbl = new System.Windows.Forms.Label();
             this.gamePanel.SuspendLayout();
             this.controlPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.livesIcon)).BeginInit();
@@ -98,7 +100,7 @@
             this.scoreLbl.AutoSize = true;
             this.scoreLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.scoreLbl.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.scoreLbl.Location = new System.Drawing.Point(179, 49);
+            this.scoreLbl.Location = new System.Drawing.Point(179, 17);
             this.scoreLbl.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.scoreLbl.Name = "scoreLbl";
             this.scoreLbl.Size = new System.Drawing.Size(99, 33);
@@ -174,6 +176,8 @@
             // controlPanel
             // 
             this.controlPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(156)))), ((int)(((byte)(167)))));
+            this.controlPanel.Controls.Add(this.livesNum);
+            this.controlPanel.Controls.Add(this.livesLbl);
             this.controlPanel.Controls.Add(this.scoreNum);
             this.controlPanel.Controls.Add(this.livesIcon);
             this.controlPanel.Controls.Add(this.startBtn);
@@ -190,7 +194,7 @@
             this.scoreNum.AutoSize = true;
             this.scoreNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.scoreNum.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.scoreNum.Location = new System.Drawing.Point(389, 49);
+            this.scoreNum.Location = new System.Drawing.Point(389, 17);
             this.scoreNum.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.scoreNum.Name = "scoreNum";
             this.scoreNum.Size = new System.Drawing.Size(46, 51);
@@ -205,7 +209,7 @@
             this.livesIcon.IconChar = FontAwesome.Sharp.IconChar.Heart;
             this.livesIcon.IconColor = System.Drawing.Color.RoyalBlue;
             this.livesIcon.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.livesIcon.IconSize = 81;
+            this.livesIcon.IconSize = 90;
             this.livesIcon.Location = new System.Drawing.Point(561, 27);
             this.livesIcon.Name = "livesIcon";
             this.livesIcon.Size = new System.Drawing.Size(81, 81);
@@ -235,7 +239,6 @@
             // 
             this.menuStrip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(156)))), ((int)(((byte)(167)))));
             this.menuStrip.Font = new System.Drawing.Font("Segoe UI", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuStrip.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.soundMenuItm,
@@ -266,6 +269,32 @@
             this.aboutMenuItm.MouseEnter += new System.EventHandler(this.aboutMenuItm_MouseEnter);
             this.aboutMenuItm.MouseLeave += new System.EventHandler(this.aboutMenuItm_MouseLeave);
             // 
+            // livesNum
+            // 
+            this.livesNum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.livesNum.AutoSize = true;
+            this.livesNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.livesNum.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.livesNum.Location = new System.Drawing.Point(389, 75);
+            this.livesNum.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.livesNum.Name = "livesNum";
+            this.livesNum.Size = new System.Drawing.Size(46, 51);
+            this.livesNum.TabIndex = 18;
+            this.livesNum.Text = "0";
+            // 
+            // livesLbl
+            // 
+            this.livesLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.livesLbl.AutoSize = true;
+            this.livesLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.livesLbl.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.livesLbl.Location = new System.Drawing.Point(179, 75);
+            this.livesLbl.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.livesLbl.Name = "livesLbl";
+            this.livesLbl.Size = new System.Drawing.Size(92, 33);
+            this.livesLbl.TabIndex = 17;
+            this.livesLbl.Text = "Lives:";
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -279,7 +308,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip;
             this.Margin = new System.Windows.Forms.Padding(6);
-            this.MaximumSize = new System.Drawing.Size(1360, 1700);
+            this.MaximumSize = new System.Drawing.Size(1100, 1360);
             this.MinimumSize = new System.Drawing.Size(680, 850);
             this.Name = "Game";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -309,9 +338,11 @@
         private System.Windows.Forms.Panel controlPanel;
         private FontAwesome.Sharp.IconButton startBtn;
         private FontAwesome.Sharp.IconPictureBox livesIcon;
-        public System.Windows.Forms.Label scoreNum;
         private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem soundMenuItm;
         private System.Windows.Forms.ToolStripMenuItem aboutMenuItm;
+        private System.Windows.Forms.Label livesLbl;
+        private System.Windows.Forms.Label scoreNum;
+        private System.Windows.Forms.Label livesNum;
     }
 }
