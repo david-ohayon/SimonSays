@@ -114,7 +114,6 @@ namespace SimonSays
             this.Name = "GameStart";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "  Start";
-            this.Load += new System.EventHandler(this.GameStart_Load);
             ((System.ComponentModel.ISupportInitialize)(this.lives)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

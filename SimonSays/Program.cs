@@ -36,8 +36,6 @@ namespace SimonSays
             pfc.AddFontFile($@"..\..\Resources\{fontname}.ttf");
             foreach (Control control in controls)
                 control.Font = new Font(pfc.Families[0], control.Font.Size);
-            //for (int i = 0; i < controls.Length; i++)
-              //  controls[i].Font = new Font(pfc.Families[0], controls[i].Font.Size);
         }
     }
 }

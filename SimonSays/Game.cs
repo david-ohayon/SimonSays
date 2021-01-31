@@ -37,8 +37,8 @@ namespace SimonSays
 
         private void Setup()
         {
-            Program.AddFontFile("scramble-font", scoreLbl, menuStrip);
-            Program.AddFontFile("numbers_font", scoreNum);
+            Program.AddFontFile("scramble-font", scoreLbl, livesLbl, menuStrip);
+            Program.AddFontFile("numbers_font", scoreNum, livesNum);
             startBtn.IconChar = IconChar.PlayCircle;
         }
         /// Generates the first color and then creates a new thread of showColors.
@@ -48,6 +48,8 @@ namespace SimonSays
             scoreNum.Text = "0";
             isActive = true;
             lives = Convert.ToInt32(GameStart.Lives);
+            Program.AddFontFile("numbers_font", livesNum);
+            livesNum.Text = lives.ToString();
 
             if (lives == 2) twoLives = true;
             if (lives == 3) threeLives = true;
@@ -146,6 +148,8 @@ namespace SimonSays
                     if (lives == 2)
                     {
                         livesIcon.IconChar = IconChar.Heartbeat;
+                        Program.AddFontFile("numbers_font", livesNum);
+                        livesNum.Text = lives.ToString();
                         return;
                     }
                 }
@@ -154,6 +158,8 @@ namespace SimonSays
                     if (lives == 1)
                     {
                         livesIcon.IconChar = IconChar.HeartBroken;
+                        Program.AddFontFile("numbers_font", livesNum);
+                        livesNum.Text = lives.ToString();
                         return;
                     }
                 }
@@ -164,6 +170,8 @@ namespace SimonSays
                     position = 0;
                     isActive = false;
                     colorList = new List<int>();
+                    Program.AddFontFile("numbers_font", livesNum);
+                    livesNum.Text = lives.ToString();
                     return;
                 }
             }
@@ -177,8 +185,6 @@ namespace SimonSays
 
             scoreNum.Text = (colorList.Count - 1).ToString();
             GameOver.Score = (colorList.Count - 1).ToString();
-
-            livesNum.Text = lives.ToString();
         }
 
         /// Listeners

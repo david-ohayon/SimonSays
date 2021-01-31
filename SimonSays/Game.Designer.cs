@@ -209,10 +209,10 @@
             this.livesIcon.IconChar = FontAwesome.Sharp.IconChar.Heart;
             this.livesIcon.IconColor = System.Drawing.Color.RoyalBlue;
             this.livesIcon.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.livesIcon.IconSize = 90;
-            this.livesIcon.Location = new System.Drawing.Point(561, 27);
+            this.livesIcon.IconSize = 100;
+            this.livesIcon.Location = new System.Drawing.Point(549, 27);
             this.livesIcon.Name = "livesIcon";
-            this.livesIcon.Size = new System.Drawing.Size(81, 81);
+            this.livesIcon.Size = new System.Drawing.Size(93, 91);
             this.livesIcon.TabIndex = 15;
             this.livesIcon.TabStop = false;
             // 

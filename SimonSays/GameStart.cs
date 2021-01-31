@@ -10,6 +10,8 @@ namespace SimonSays
         public GameStart()
         {
             InitializeComponent();
+
+            Setup();
         }
 
         private void Setup()
@@ -21,11 +23,6 @@ namespace SimonSays
         {
             Program.OpenForm(this, new Game());
             Lives = lives.Value.ToString();
-        }
-
-        private void GameStart_Load(object sender, EventArgs e)
-        {
-            Setup();
         }
     }
 }
